@@ -1,0 +1,74 @@
+html {
+}
+body {
+  background: coral;
+  font-family: helvetica, sans-serif;
+}
+.container {
+  width: 90%;
+  max-width: 112rem;
+  margin: 3rem auto;
+  background: #fff;
+  display: block;
+  padding: 1rem 3rem;
+  border-radius: 0.5rem;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
+}
+#scores {
+  display: grid;
+  gap: 3rem;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+#scores > * {
+}
+
+h1 {
+  font-size: 3rem;
+  color: #666;
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 2rem;
+}
+
+th {
+  text-align: left;
+}
+
+td {
+  padding: 0.25rem 0;
+}
+table .value {
+  text-align: right;
+}
+thead {
+  border-bottom: 1px solid #ccc;
+}
+thead th {
+  padding-bottom: 0.5rem;
+}
+
+tbody > tr:last-child {
+  padding-top: 1rem;
+  border-top: 2px solid orange;
+}
+tbody > tr:last-child td {
+  padding-top: 1rem;
+}
+
+.toApp {
+  display: block;
+  background: #efefef;
+  border: solid 1px #ccc;
+  padding: 1rem;
+  margin: 1rem;
+  border-radius: 20rem;
+  text-align: center;
+  text-decoration: none;
+  color: #999;
+}
+.toApp:hover {
+  color: #ccc;
+  background: #666;
+}

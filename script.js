@@ -4,19 +4,25 @@ const scoreHolder = document.getElementById("scores");
 // Currently hard coded list of teams to include.
 const contestants = [
   {
-    name: "Ryan's Test Project with a long name",
-    scoreLocation: "https://ryanparsley.github.io/speed-run-fork/score.json",
+    name: "Main",
+    scoreLocation:
+      "https://storage.googleapis.com/jslc1refspeedruncdn01/2024-05-skill-up/scoreboard/data/main-score.json",
   },
   {
-    name: "StubOut 2024",
+    name: "Ryan's Dogfood",
     scoreLocation:
-      "https://storage.googleapis.com/jslc1refspeedruncdn01/2024-05-skill-up/scoreboard/data/stubOut2024-score.json",
+      "https://storage.googleapis.com/jslc1refspeedruncdn01/2024-05-skill-up/scoreboard/data/day2-dogfood-ryan-score.json",
   },
-  { name: "team-b", scoreLocation: "data/team-b-score.json" },
-  { name: "team-c", scoreLocation: "data/team-c-score.json" },
-  { name: "team-d", scoreLocation: "data/team-d-score.json" },
-  { name: "team-e", scoreLocation: "data/team-e-score.json" },
-  { name: "team-f", scoreLocation: "data/team-f-score.json" },
+  {
+    name: "Team B",
+    scoreLocation:
+      "https://storage.googleapis.com/jslc1refspeedruncdn01/2024-05-skill-up/scoreboard/data/team-b-score.json",
+  },
+  {
+    name: "Team C",
+    scoreLocation:
+      "https://storage.googleapis.com/jslc1refspeedruncdn01/2024-05-skill-up/scoreboard/data/team-c-score.json",
+  },
 ];
 
 /**

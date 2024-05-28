@@ -2,6 +2,7 @@
 const scoreHolder = document.getElementById("scores");
 
 // Currently hard coded list of teams to include.
+/**
 const contestants = [
   {
     name: "Main",
@@ -14,16 +15,92 @@ const contestants = [
       "https://storage.googleapis.com/jslc1refspeedruncdn01/2024-05-skill-up/scoreboard/data/day2-dogfood-ryan-score.json",
   },
   {
-    name: "Team B",
+    name: "Bradley's solution",
     scoreLocation:
-      "https://storage.googleapis.com/jslc1refspeedruncdn01/2024-05-skill-up/scoreboard/data/team-b-score.json",
+      "https://storage.googleapis.com/jslc1refspeedruncdn01/2024-05-skill-up/scoreboard/data/ryan-problem-test-score.json",
   },
   {
-    name: "Team C",
+    name: "Problem Branch",
     scoreLocation:
-      "https://storage.googleapis.com/jslc1refspeedruncdn01/2024-05-skill-up/scoreboard/data/team-c-score.json",
+      "https://storage.googleapis.com/jslc1refspeedruncdn01/2024-05-skill-up/scoreboard/data/day2-frontend-score.json",
+  },
+  {
+    name: "Solution",
+    scoreLocation:
+      "https://storage.googleapis.com/jslc1refspeedruncdn01/2024-05-skill-up/scoreboard/data/day2-frontend-ryan-score.json",
   },
 ];
+**/
+
+/**
+ *
+ * ## Frontend
+ *
+ * Corbin Edwards
+ * Austen Solvie
+ * Jonathan Hogate
+ * Matt Couts
+ * Stephen Reich
+ **/
+
+const contestants = [
+  {
+    name: "Problem Branch",
+    scoreLocation: "data/day2-frontend-score.json",
+  },
+  {
+    name: "Solution",
+    scoreLocation: "data/day2-frontend-ryan-score.json",
+  },
+  {
+    name: "Corbin Edwards",
+    scoreLocation: "data/edwards-corbin-score.json",
+  },
+  {
+    name: "Austen Solvie",
+    scoreLocation: "data/solvie-austen-score.json",
+  },
+  {
+    name: "Jonathan Hogate",
+    scoreLocation: "data/hogate-jonathan-score.json",
+  },
+  {
+    name: "Matt Couts",
+    scoreLocation: "data/couts-matt-score.json",
+  },
+  {
+    name: "Stephen Reich",
+    scoreLocation: "data/reich-stephen-score.json",
+  },
+];
+/*
+ * ## Backend
+ *
+ * Benjamin Osowiecki (Java)
+ * Charles Frais (.NET)
+ * Ryan Green (Java)
+ * Samuel Reagan (Java)
+ *
+const contestants = [
+  {
+    name: "Benjamin Osowieki",
+    scoreLocation: "data/osowiecki-benjamin-score.json",
+  },
+  {
+    name: "Charles Frais",
+    scoreLocation: "data/frais-charles-score.json",
+  },
+  {
+    name: "Ryan Green",
+    scoreLocation: "data/green-ryan-score.json",
+  },
+  {
+    name: "Samuel Reagan",
+    scoreLocation: "data/reagan-samuel-score.json",
+  },
+];
+
+ **/
 
 /**
  * Create a div per team to be injected into the DOM
@@ -61,18 +138,9 @@ const scoreElements = contestants.map(({ name }) => ({
   element: document.getElementById(`${name}-list`),
 }));
 
-// Adjust the app link based on if we're in dev mode or not.
-const appUrl = ["localhost", "127.0.0.1"].includes(location.hostname)
-  ? "http://localhost:4200/"
-  : "https://ryanparsley.github.io/speed-run/speed-run/browser/";
-
-// wire up a link to the demo app
-let outbound = document?.getElementById("outbound");
-outbound && (outbound["href"] = appUrl);
-
 /**
  * Initialize the app's state
- * @type { { team: string, testScore: string, timeScore: string, lintModifier: string, total: string}[] }
+ * @type { { team: string, testScore: string, lintModifier: string, total: string}[] }
  */
 let scores = [];
 
@@ -87,19 +155,13 @@ const fetchScores = async () => {
           );
           return;
         }
-        response.json().then(function ({
-          testScore,
-          timeScore,
-          lintModifier,
-          total,
-        }) {
+        response.json().then(function ({ testScore, lintModifier, total }) {
           // Amend to shared state
           scores = [
             ...scores,
             {
               team,
               testScore,
-              timeScore,
               lintModifier,
               total,
             },
@@ -116,7 +178,7 @@ const fetchScores = async () => {
 
 /**
  * Inject scores to the approprate table
- * @param { { team: string, testScore: string, timeScore: string, lintModifier: string, total: string}[] } scores
+ * @param { { team: string, testScore: string, lintModifier: string, total: string}[] } scores
  */
 const updateList = (scores) => {
   scores.forEach((score) => {
@@ -126,7 +188,6 @@ const updateList = (scores) => {
     scoreElement?.element &&
       (scoreElement.element.innerHTML = renderList([
         { title: "Test Score", value: score.testScore },
-        { title: "Time Score", value: score.timeScore },
         { title: "Lint Modifier", value: score.lintModifier },
         { title: "Total", value: score.total },
       ]));

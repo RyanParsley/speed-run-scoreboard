@@ -15,19 +15,19 @@ const scoreHolder = document.getElementById("scores");
 const contestants = [
   {
     name: "Benjamin Osowieki",
-    scoreLocation: "data/day1-backend-osowiecki-benjamin-score.json",
+    scoreLocation: "data/day2-backend-osowiecki-benjamin-score.json",
   },
   {
     name: "Charles Frais",
-    scoreLocation: "data/day1-backend-frais-charles-score.json",
+    scoreLocation: "data/day2-backend-frais-charles-score.json",
   },
   {
     name: "Ryan Green",
-    scoreLocation: "data/day1-backend-green-ryan-score.json",
+    scoreLocation: "data/day2-backend-green-ryan-score.json",
   },
   {
     name: "Samuel Reagan",
-    scoreLocation: "data/day1-backend-reagan-samuel-score.json",
+    scoreLocation: "data/day2-backend-reagan-samuel-score.json",
   },
 ];
 

@@ -2,35 +2,6 @@
 const scoreHolder = document.getElementById("scores");
 
 // Currently hard coded list of teams to include.
-/**
-const contestants = [
-  {
-    name: "Main",
-    scoreLocation:
-      "https://storage.googleapis.com/jslc1refspeedruncdn01/2024-05-skill-up/scoreboard/data/main-score.json",
-  },
-  {
-    name: "Ryan's Dogfood",
-    scoreLocation:
-      "https://storage.googleapis.com/jslc1refspeedruncdn01/2024-05-skill-up/scoreboard/data/day2-dogfood-ryan-score.json",
-  },
-  {
-    name: "Bradley's solution",
-    scoreLocation:
-      "https://storage.googleapis.com/jslc1refspeedruncdn01/2024-05-skill-up/scoreboard/data/ryan-problem-test-score.json",
-  },
-  {
-    name: "Problem Branch",
-    scoreLocation:
-      "https://storage.googleapis.com/jslc1refspeedruncdn01/2024-05-skill-up/scoreboard/data/day2-frontend-score.json",
-  },
-  {
-    name: "Solution",
-    scoreLocation:
-      "https://storage.googleapis.com/jslc1refspeedruncdn01/2024-05-skill-up/scoreboard/data/day2-frontend-ryan-score.json",
-  },
-];
-**/
 
 /**
  *
@@ -41,38 +12,30 @@ const contestants = [
  * Jonathan Hogate
  * Matt Couts
  * Stephen Reich
- **/
-
+ */
 const contestants = [
   {
-    name: "Problem Branch",
-    scoreLocation: "data/day2-frontend-score.json",
+    name: "Edwards",
+    scoreLocation: "data/day1-frontend-edwards-corbin-score.json",
   },
   {
-    name: "Solution",
-    scoreLocation: "data/day2-frontend-ryan-score.json",
+    name: "Solvie",
+    scoreLocation: "data/day1-frontend-solvie-austen-score.json",
   },
   {
-    name: "Corbin Edwards",
-    scoreLocation: "data/edwards-corbin-score.json",
+    name: "Hogate",
+    scoreLocation: "data/day1-frontend-hogate-jonathan-score.json",
   },
   {
-    name: "Austen Solvie",
-    scoreLocation: "data/solvie-austen-score.json",
+    name: "Couts",
+    scoreLocation: "data/day1-frontend-couts-matt-score.json",
   },
   {
-    name: "Jonathan Hogate",
-    scoreLocation: "data/hogate-jonathan-score.json",
-  },
-  {
-    name: "Matt Couts",
-    scoreLocation: "data/couts-matt-score.json",
-  },
-  {
-    name: "Stephen Reich",
-    scoreLocation: "data/reich-stephen-score.json",
+    name: "Reich",
+    scoreLocation: "data/day1-frontend-reich-stephen-score.json",
   },
 ];
+
 /*
  * ## Backend
  *
@@ -81,27 +44,29 @@ const contestants = [
  * Ryan Green (Java)
  * Samuel Reagan (Java)
  *
+ **/
+
+/*
 const contestants = [
   {
-    name: "Benjamin Osowieki",
-    scoreLocation: "data/osowiecki-benjamin-score.json",
+    name: "Osowieki",
+    scoreLocation: "data/day1-backend-osowiecki-benjamin-score.json",
   },
   {
-    name: "Charles Frais",
-    scoreLocation: "data/frais-charles-score.json",
+    name: "Frais",
+    scoreLocation: "data/day1-backend-osowiecki-frais-charles-score.json",
   },
   {
-    name: "Ryan Green",
-    scoreLocation: "data/green-ryan-score.json",
+    name: "Green",
+    scoreLocation: "data/day1-backend-osowiecki-green-ryan-score.json",
   },
   {
-    name: "Samuel Reagan",
-    scoreLocation: "data/reagan-samuel-score.json",
+    name: "Reagan",
+    scoreLocation: "data/day1-backend-osowiecki-reagan-samuel-score.json",
   },
 ];
 
  **/
-
 /**
  * Create a div per team to be injected into the DOM
  * @param { { name: string, scoreLocation: string }[] } contestants
